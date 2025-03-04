@@ -3,63 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEP Innovators Hub</title>
+    <title>MEP Innovators Hub - Pioneering Engineering Solutions</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="banner">
-            <h1>MEP Innovators Hub</h1>
-            <p>Innovating Mechanical, Electrical, and Plumbing Solutions</p>
-        </div>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <nav class="main-nav">
+            <div class="logo"><a href="#">MEP Innovators Hub</a></div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#mechanical">Mechanical</a></li>
+                        <li><a href="#electrical">Electrical</a></li>
+                        <li><a href="#plumbing">Plumbing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-cta"><a href="#contact" class="cta-button">Get Started</a></div>
         </nav>
+        <div class="hero parallax">
+            <video autoplay muted loop class="hero-video">
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero-content">
+                <h1>Pioneering MEP Solutions</h1>
+                <p>Engineering excellence for a sustainable tomorrow.</p>
+                <button class="cta-button" onclick="scrollToSection('contact')">Request a Consultation</button>
+            </div>
+        </div>
     </header>
 
-    <section id="home" class="container">
-        <h2>Welcome</h2>
-        <p>We’re your hub for cutting-edge MEP engineering solutions.</p>
-        <button class="cta-button">Learn More</button>
-    </section>
-
-    <section id="about" class="container">
-        <h2>About Us</h2>
-        <div class="flex-container">
-            <div class="flex-item">
-                <h3>Our Mission</h3>
-                <p>Advancing sustainable and smart MEP designs.</p>
+    <!-- Services Section -->
+    <section id="services" class="container fade-in">
+        <h2>Our Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card" id="mechanical">
+                <img src="mechanical-icon.png" alt="Mechanical" class="icon">
+                <h3>Mechanical Engineering</h3>
+                <p>Advanced HVAC, thermal modeling, and industrial systems.</p>
+                <div class="service-details">
+                    <p>Specializing in energy-efficient designs, custom machinery, and retrofitting solutions.</p>
+                </div>
             </div>
-            <div class="flex-item">
-                <h3>Our Team</h3>
-                <p>Experts in engineering and innovation.</p>
+            <div class="service-card" id="electrical">
+                <img src="electrical-icon.png" alt="Electrical" class="icon">
+                <h3>Electrical Engineering</h3>
+                <p>Smart grids, lighting, and renewable energy systems.</p>
+                <div class="service-details">
+                    <p>Expertise in power distribution, automation, and solar integration.</p>
+                </div>
+            </div>
+            <div class="service-card" id="plumbing">
+                <img src="plumbing-icon.png" alt="Plumbing" class="icon">
+                <h3>Plumbing Engineering</h3>
+                <p>Water management, sanitation, and sustainable piping.</p>
+                <div class="service-details">
+                    <p>Innovative solutions for water reuse, drainage, and compliance.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="container">
-        <h2>Our Projects</h2>
-        <p>Check out our latest work in sustainable infrastructure.</p>
-        <button class="cta-button">View Projects</button>
+    <!-- Stats Section -->
+    <section class="stats fade-in">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="150">0</h3>
+                <p>Projects Completed</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="25">0</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="stat-number" data-target="50">0</h3>
+                <p>Expert Engineers</p>
+            </div>
+        </div>
     </section>
 
-    <section id="contact" class="container">
-        <h2>Contact Us</h2>
-        <p>Email: info@mepinnovatorshub.com | Phone: (123) 456-7890</p>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit" class="cta-button">Send</button>
-        </form>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container fade-in">
+        <h2>Our Portfolio</h2>
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="industrial">Industrial</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="commercial">
+                <img src="project1.jpg" alt="Office Tower">
+                <div class="portfolio-overlay">
+                    <h3>Sustainable Office Tower</h3>
+                    <p>Net-zero MEP systems</p>
+                    <button class="cta-button" onclick="openPortfolioModal('project1')">Details</button>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="industrial">
+                <img src="project2.jpg" alt="Smart Factory">
+                <div class="portfolio-overlay">
+                    <h3>Smart Factory</h3>
+                    <p>Automated MEP integration</p>
+                    <button class="cta-button" onclick="openPortfolioModal('project2')">Details</button>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="healthcare">
+                <img src="project3.jpg" alt="Green Hospital">
+                <div class="portfolio-overlay">
+                    <h3>Green Hospital</h3>
+                    <p>Eco-friendly MEP design</p>
+                    <button class="cta-button" onclick="openPortfolioModal('project3')">Details</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>© 2025 MEP Innovators Hub. All rights reserved.</p>
+    <!-- Team Section -->
+    <section id="team" class="container fade-in">
+        <h2>Our Leadership</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <img src="team1.jpg" alt="John Doe">
+                <h3>John Doe, PE</h3>
+                <p>Chief Mechanical Engineer</p>
+                <p class="bio">25 years in HVAC innovation, LEED certified.</p>
+                <ul class="skills">
+                    <li>Thermal Dynamics</li>
+                    <li>Energy Modeling</li>
+                </ul>
+            </div>
+            <div class="team-card">
+                <img src="team2.jpg" alt="Jane Smith">
+                <h3>Jane Smith, EE</h3>
+                <p>Electrical Director</p>
+                <p class="bio">Pioneer in smart grid tech, IEEE member.</p>
+                <ul class="skills">
+                    <li>Power Systems</li>
+                    <li>Renewable Energy</li>
+                </ul>
+            </div>
+            <div class="team-card">
+                <img src="team3.jpg" alt="Alex Brown">
+                <h3>Alex Brown, CPD</h3>
+                <p>Plumbing Lead</p>
+                <p class="bio">Expert in water conservation, ASPE certified.</p>
+                <ul class="skills">
+                    <li>Piping Design</li>
+                    <li>Water Reuse</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Teaser Section -->
+    <section id="blog" class="container fade-in">
+        <h2>Latest Insights</h2>
+        <div class="blog-grid">
+            <div class="blog-item">
+                <img src="blog1.jpg" alt="Blog 1">
+                <h3>Trends in MEP Sustainability</h3>
+                <p>Exploring the future of green engineering.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+            <div class="blog-item">
+                <img src="blog2.jpg" alt="Blog 2">
+                <h3>Smart Building Technologies</h3>
+                <p>How automation is reshaping MEP.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container fade-in">
+        <h2>Get in Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:info@mepinnovatorshub.com">info@mepinnovatorshub.com</a></p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Address:</strong> 123 Innovation Drive, Tech City</p>
+            </div>
+            <form onsubmit="submitForm(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone" required>
+                <textarea placeholder="Your Project Details" rows="6" required></textarea>
+                <button type="submit" class="cta-button">Submit Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h4>MEP Innovators Hub</h4>
+                <p>Delivering world-class MEP engineering solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Certifications</h4>
+                <p>LEED | ASPE | IEEE</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <p><a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 MEP Innovators Hub. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Portfolio Modal -->
+    <div id="portfolio-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePortfolioModal()">×</span>
+            <h2 id="modal-title"></h2>
+            <img id="modal-image" src="" alt="Project Image">
+            <p id="modal-description"></p>
+            <p id="modal-details"></p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
