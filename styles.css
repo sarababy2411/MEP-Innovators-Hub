@@ -1,80 +1,141 @@
-/* Reset default margins and padding */
+/* Reset defaults */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
-/* Header styling */
+/* Header and Banner */
 header {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 20px;
 }
 
-header h1 {
-    font-size: 36px;
+.banner {
+    padding: 50px 20px;
+    background: url('banner.jpg') no-repeat center/cover; /* Add your own image */
+}
+
+.banner h1 {
+    font-size: 48px;
     margin-bottom: 10px;
 }
 
+.banner p {
+    font-size: 20px;
+}
+
 nav {
-    margin-top: 10px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 20px;
     font-size: 18px;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #3498db;
 }
 
-/* Section styling */
-section {
-    padding: 40px;
+/* Container for sections */
+.container {
+    padding: 50px 20px;
     text-align: center;
-}
-
-section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-section p {
-    font-size: 16px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Alternating section colors */
-#home, #projects {
-    background-color: #ecf0f1;
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2c3e50;
 }
 
-#about, #contact {
+/* Flexbox for About section */
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
     background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer styling */
+/* Call-to-action button */
+.cta-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #2980b9;
+}
+
+/* Contact form */
+form {
+    max-width: 500px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Footer */
 footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 15px;
+    position: relative;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .banner h1 {
+        font-size: 36px;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    .flex-item {
+        flex: 100%;
+    }
 }
